@@ -1,0 +1,64 @@
+### --- INICIALIZAÇÃO E CRIAÇÃO ---
+
+### 1. 🟢 Criar Escola Completa (POST /escolas) - ID 1
+POST http://localhost:3000/escolas
+Content-Type: application/json
+
+{
+    "nome": "Escola Técnica Avançada",
+    "endereco": "Rua do Saber, 45",
+    "telefone": "(11) 98765-4321"
+}
+
+### 2. 🟢 Criar Segunda Escola (POST /escolas) - ID 2
+POST http://localhost:3000/escolas
+Content-Type: application/json
+
+{
+    "nome": "Colégio Municipal Padrão",
+    "endereco": "Av. Central, 900"
+}
+
+### --- TESTE DE ATUALIZAÇÃO (PUT) ---
+
+### 3. 🟢 Atualizar a Escola com ID 1 (PUT /escolas/1)
+# Atualiza o nome e telefone da Escola Técnica Avançada
+PUT http://localhost:3000/escolas/1
+Content-Type: application/json
+
+{
+    "nome": "Escola Técnica Profissional (ATUALIZADO)",
+    "endereco": "Rua do Saber, 45",
+    "telefone": "(21) 5555-5555"
+}
+
+### 4. 🟢 Verificar a Atualização (GET /escolas/1)
+GET http://localhost:3000/escolas/1
+Content-Type: application/json
+
+### 5. 🔴 Tentar Atualizar ID Inexistente (PUT /escolas/99)
+# Esperado: Status 404 Not Found
+PUT http://localhost:3000/escolas/99
+Content-Type: application/json
+
+{
+    "nome": "Nome Falso",
+    "endereco": "Endereço Falso"
+}
+
+### --- TESTE DE REMOÇÃO (DELETE) ---
+
+### 6. 🟢 Remover a Escola com ID 2 (DELETE /escolas/2)
+# Esperado: Status 204 No Content
+DELETE http://localhost:3000/escolas/2
+Content-Type: application/json
+
+### 7. 🟢 Verificar a Remoção (GET /escolas)
+# Esperado: Lista deve conter apenas a Escola de ID 1
+GET http://localhost:3000/escolas
+Content-Type: application/json
+
+### 8. 🔴 Tentar Remover a Escola de ID 2 Novamente (DELETE /escolas/2)
+# Esperado: Status 404 Not Found
+DELETE http://localhost:3000/escolas/2
+Content-Type: application/json
