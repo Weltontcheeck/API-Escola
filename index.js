@@ -1,3 +1,4 @@
+//trabalho de Desenvolvimento de software
 import express from "express";
 import cors from "cors";
 
@@ -29,3 +30,4 @@ app.post("/escolas", (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor em execução no endereço: http://localhost:${port}`);
 });
+
