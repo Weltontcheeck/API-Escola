@@ -9,7 +9,7 @@ POST http://localhost:3000/escolas
 Content-Type: application/json
 
 {
-  "nome": "uniersidade padre anchieta",
+  "nome": "universidade padre anchieta",
   "endereco": "Rua das Flores, 123 - Centro"
 }
 
@@ -23,3 +23,4 @@ Content-Type: application/json
   "nome": "Colégio modelo",
   "endereco": "Av. Brasil, 456 - Bairro Novo"
 }
+
