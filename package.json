@@ -1,20 +1,14 @@
 {
   "name": "api-escola",
   "version": "1.0.0",
-  "description": "API simples para cadastro e leitura de escolas",
+  "description": "API REST para cadastro e leitura de escolas",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node --watch index.js"
+    "start": "node index.js"
   },
-  "keywords": [
-    "api",
-    "express",
-    "nodejs"
-  ],
-  "author": "Welton",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
   }
 }
